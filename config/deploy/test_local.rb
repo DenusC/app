@@ -5,7 +5,7 @@
  server 'localhost', user: 'cyy', roles: %w{app db web}
  set :deploy_to, "/Users/cyy/www/#{fetch(:application)}"
  set :scm, :git
- set :repo_url, 'https://github.com/DenusC/learn.git'
+ set :repo_url, 'https://github.com/DenusC/app.git'
 # server 'example.com', user: 'deploy', roles: %w{app web}, other_property: :other_value
 # server 'db.example.com', user: 'deploy', roles: %w{db}
 
