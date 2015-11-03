@@ -1,0 +1,6 @@
+if ($("#<%= dom_id(@comment) %> .comment_content form").length == 0) {
+  $("#<%= dom_id(@comment) %>").replaceWith("<%= escape_javascript render("form") %>");
+  $("#<%= dom_id(@comment) %>").find("#comment_content")[0].focus();
+} else {
+  $("#<%= dom_id(@comment) %>").replaceWith("<%= escape_javascript render(@comment) %>");
+}

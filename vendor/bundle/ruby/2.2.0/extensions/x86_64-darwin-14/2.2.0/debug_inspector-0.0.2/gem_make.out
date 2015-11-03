@@ -1,0 +1,11 @@
+/Users/cyy/.rvm/rubies/ruby-2.2.3/bin/ruby -r ./siteconf20151103-57814-1kq5cxp.rb extconf.rb
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling debug_inspector.c
+linking shared-object debug_inspector.bundle
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 debug_inspector.bundle ./.gem.20151103-57814-rxm9in

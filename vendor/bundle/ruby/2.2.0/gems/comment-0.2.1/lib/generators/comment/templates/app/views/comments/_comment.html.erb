@@ -1,0 +1,23 @@
+<%= div_for comment do %>
+  <%= render "common/flashes" %>
+  <div class="face">
+    <%= profile_avatar_tag(comment.user.profile, :size36) %>
+  </div>
+  <div class="main">
+    <%= render "comments/comment_headline", :comment => comment %>
+    <div class="comment_content">
+      <%= simple_format comment.content %>
+    </div>
+    <div class="actions">
+      <%= link_to "Reply", new_comment_path(:parent_id => comment), :remote => true  %>
+      <% if current_user.id == comment.user.id %>
+        <span class="bullet">•</span>
+        <%= link_to "Edit", edit_comment_path(comment), :remote => true %>
+        <span class="bullet">•</span>
+        <%= link_to "Delete", comment, :method => :delete, :remote => true, :confirm => "此评论和所有子评论都将被删除，你确定吗?" %>
+      <% end %>
+    </div>
+    <div style="clear:both;"></div>
+  </div>
+  <div style="clear:both;"></div>
+<% end %>

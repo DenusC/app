@@ -1,0 +1,22 @@
+<div class="headline">
+  <span class="name">
+    <%= link_to comment.user.profile.name, comment.user.profile %>
+  </span>
+  <% if comment.new_record? %>
+    <span class="bullet">•</span>
+    <span class="position">请输入评论内容</span>
+  <% end %>
+  <% unless comment.created_at.nil? %>
+    <span class="bullet">•</span>
+    <%= time_ago_in_words comment.created_at %>前
+    <%#<%= comment.created_at.strftime("%Y-%m-%d %H:%M:%I") %>
+  <% end %>
+  <ul class="menu">
+    <li class="collapse">
+      <a href="#" data-action="collapse" title="Collapse">−</a>
+    </li>
+    <li class="expand" style="display:none">
+      <a href="#" data-action="collapse" title="Expand">+</a>
+    </li>
+  </ul>
+</div>

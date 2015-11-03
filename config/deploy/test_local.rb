@@ -6,7 +6,6 @@
  set :deploy_to, "/Users/cyy/www/#{fetch(:application)}"
  set :scm, :git
  set :repo_url, 'https://github.com/DenusC/app.git'
- set :linked_dirs, fetch(:linked_dirs, []).push('bin')
 # server 'example.com', user: 'deploy', roles: %w{app web}, other_property: :other_value
 # server 'db.example.com', user: 'deploy', roles: %w{db}
 

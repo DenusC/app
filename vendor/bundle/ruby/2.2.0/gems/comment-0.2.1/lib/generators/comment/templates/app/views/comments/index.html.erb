@@ -1,0 +1,10 @@
+<% provide :title, "Recent Comments" %>
+<%= form_tag comments_path, :method => :get do %>
+  <%= text_field_tag :comment_search, params[:comment_search] %>
+  <%= submit_tag "Search Comments", :class => 'btn btn-primary' %>
+<% end %>
+<div class="box" id="comments">
+  <h2>评论列表</h2>
+  <%= nested_comments @comments %>
+  <%= render 'form' %>
+</div>

@@ -1,0 +1,40 @@
+<%= div_for @comment do %>
+  <div class="face">
+    <%= profile_avatar_tag(current_user.profile, :size36) %>
+  </div>
+  <div class="main">
+    <%= render "comments/comment_headline", :comment => @comment %>
+    <div class="comment_content">
+      <%= form_for @comment, :remote => true do |f| %>
+        <fieldset>
+          <%= render :partial => "common/form_error", :locals => { model: @comment } %>
+          <%= f.hidden_field :parent_id %>
+          <%= f.hidden_field :commentable_id %>
+          <%= f.hidden_field :commentable_type %>
+          <div class="control-group">
+            <div class="controls">
+              <%= f.text_area :content, :class => 'text_area span6', :rows => 3, :onKeyDown => "javascript:return ctrl_enter_submit(event);" %>
+              <div>
+                <%= f.submit(@comment.new_record? ? "Post Comment" : "Update Comment", :class => "btn btn-primary") %>
+                (Ctrl+Enter)
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      <% end %>
+    </div>
+    <% unless @comment.new_record? %>
+      <div class="actions">
+        <%= link_to "Reply", new_comment_path(:parent_id => @comment), :remote => true  %>
+        <% if current_user.id == @comment.user.id %>
+          <span class="bullet">•</span>
+          <%= link_to "Cancel Edit", edit_comment_path(@comment), :remote => true %>
+          <span class="bullet">•</span>
+          <%= link_to "Delete", @comment, :method => :delete, :remote => true %>
+        <% end %>
+      </div>
+    <% end %>
+    <div style="clear:both;"></div>
+  </div>
+  <div style="clear:both;"></div>
+<% end %>
