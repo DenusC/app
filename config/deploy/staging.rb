@@ -61,3 +61,13 @@ set :branch, 'master'
 #     auth_methods: %w(publickey password)
 #     # password: 'please use keys'
 #   }
+
+desc 'test local tasks' 
+task :local do
+  run_locally do
+    with rails_env: :development do
+        rake 'assets:precompile'    
+    end
+  end
+end
+

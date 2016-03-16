@@ -52,6 +52,9 @@ GEM
     capistrano-rails (1.1.5)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
+    capistrano3-puma (1.2.1)
+      capistrano (~> 3.0)
+      puma (>= 2.6)
     celluloid (0.17.2)
       celluloid-essentials
       celluloid-extras
@@ -115,6 +118,7 @@ GEM
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     orm_adapter (0.5.0)
+    puma (2.14.0)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -204,11 +208,13 @@ DEPENDENCIES
   byebug
   capistrano (~> 3.4.0)
   capistrano-rails
+  capistrano3-puma
   coffee-rails (~> 4.1.0)
   comment
   devise
   jbuilder (~> 2.0)
   jquery-rails
+  puma
   rails (= 4.2.4)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)

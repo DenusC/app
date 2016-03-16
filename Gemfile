@@ -48,4 +48,6 @@ end
 gem 'sidekiq'
 gem 'comment'
 gem 'devise'
+gem 'puma'
 gem 'capistrano', '~> 3.4.0'
+gem 'capistrano3-puma'
