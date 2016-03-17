@@ -2,7 +2,7 @@ source 'https://ruby.taobao.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.4'
+gem 'rails', '~> 4.2'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
@@ -38,6 +38,14 @@ group :development, :test do
 end
 
 group :development do
+  gem 'guard', '~> 2.13'
+  gem 'guard-rails', '~> 0.7.2'
+  gem 'guard-rspec', '~> 4.6', '>= 4.6.4'
+  gem 'guard-sidekiq', '~> 0.1.0'
+  gem 'guard-bundler', '~> 2.1'
+  gem 'guard-annotate', '~> 2.3'
+  gem 'guard-livereload', '~> 2.5', '>= 2.5.2'
+
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
   gem 'capistrano', '~> 3.4.0'
