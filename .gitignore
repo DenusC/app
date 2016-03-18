@@ -4,3 +4,4 @@ vendor/cache/
 Gemfile.lock
 Capfile
 .bundle/
+config/database.yml
