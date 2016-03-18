@@ -3,3 +3,4 @@ tmp/
 vendor/cache/
 Gemfile.lock
 Capfile
+.bundle/
