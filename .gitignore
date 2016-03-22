@@ -5,3 +5,5 @@ Gemfile.lock
 Capfile
 .bundle/
 config/database.yml
+*/**/.DS_Store
+db/schema.rb

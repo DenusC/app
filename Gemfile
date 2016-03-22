@@ -60,3 +60,11 @@ gem 'sidekiq'
 gem 'comment'
 gem 'devise'
 gem 'puma'
+# 前端
+gem "therubyracer"
+gem "less-rails"
+gem 'twitter-bootstrap-rails', '~> 3.2', '>= 3.2.2'
+gem 'simple_form', '~> 3.2', '>= 3.2.1'
+# 模板
+gem 'slim', '~> 3.0', '>= 3.0.6'
+gem 'backend', path: "./backend"

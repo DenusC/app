@@ -1,0 +1,8 @@
+
+h4 新建轮播
+.center
+= simple_form_for @carousel, html:{class:'grid-block  grid-content'} do |f|
+  = f.input :name
+  = f.input :photo_path
+  = f.input :url
+  = f.input :caption

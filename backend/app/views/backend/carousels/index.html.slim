@@ -1,0 +1,18 @@
+= link_to "新增轮播", backend.new_carousel_path, class: 'float-right button'
+hr
+table
+  thead
+    th 名称
+    th 缩略图地址
+    th 标题
+    th 链接地址
+    th 优先级
+  tbody
+    - @carousels.each do |carousel|
+      tr
+        td = carousel.name
+        td = carousel.photo_path
+        td = carousel.caption
+        td = carousel.url
+        td = carousel.priority
+           
