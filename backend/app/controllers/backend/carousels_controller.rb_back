@@ -1,0 +1,22 @@
+require_dependency "backend/application_controller"
+
+module Backend
+class CarouselsController < ApplicationController
+  def index
+    @carousels = Carousel.all.order('id desc')
+  end
+
+  def new
+    @carousel = Carousel.new
+  end
+
+  def create
+
+  end
+
+  private
+  def carousel_params
+    params.require(:carousel).permit(:caption, :name, :photo_path, :url)
+  end
+end
+end

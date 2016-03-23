@@ -1,24 +1,21 @@
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
-    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    <%- @carousels.each_index do |index| %>
+      <li data-target="#carousel-example-generic" data-slide-to=#{index}></li>
+    <%end%>
   </ol>
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <div class="carousel-caption">
-        ...
+    <%- @carousels.each do |carousel| %>
+      <div class="item active">
+        <%= image_tag carousel.photo_path %>
+        <div class="carousel-caption">
+          <%= carousel.caption %>
+        </div>
       </div>
-    </div>
-    <div class="item">
-      <div class="carousel-caption">
-        ...
-      </div>
-    </div>
-    ...
+    <%end%>
   </div>
 
   <!-- Controls -->
@@ -30,9 +27,4 @@
     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
-</div>
-
-<div class="row">
-  <%= render partial: 'thumbail', collection: @videos %>
-
 </div>

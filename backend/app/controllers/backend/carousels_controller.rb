@@ -1,13 +1,7 @@
-require_dependency "backend/application_controller"
-
 module Backend
-  class CarouselsController < ApplicationController
-    def index
-      @carousels = Carousel.all.order('id desc')
-    end
-
-    def new
-      @carousel = Carousel.new
-    end
+class CarouselsController < ResourcesController
+  def show
+    redirect_to action: :index
   end
+end
 end

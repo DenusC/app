@@ -14,18 +14,30 @@ module App
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
-    # config.time_zone = 'Central Time (US & Canada)'
+    config.time_zone = 'Beijing'
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    # config.i18n.default_locale = :de
+    config.i18n.default_locale = 'zh-CN'
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
-    config.test_framework = nil
+    config.test_framework = :minitest
     config.template_engine = :slim
+
+    # generator
     config.generators do |g|
-      g.test_framework :nil
+      g.test_framework :minitest
+      g.helper :false
+      g.template_engine :slim
     end
+
+    # middleware config
+    config.middleware.use ActionDispatch::RemoteIp
+    config.middleware.use ActiveRecord::QueryCache
+
+    # controller
+    config.action_controller.perform_caching = false
+
   end
 end

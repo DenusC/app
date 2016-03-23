@@ -8,11 +8,11 @@ table
     th 链接地址
     th 优先级
   tbody
-    - @carousels.each do |carousel|
+    - @resources.each do |resource|
       tr
-        td = carousel.name
-        td = carousel.photo_path
-        td = carousel.caption
-        td = carousel.url
-        td = carousel.priority
+        td = resource.name
+        td = resource.photo_path
+        td = resource.caption
+        td = resource.url
+        td = resource.priority
            

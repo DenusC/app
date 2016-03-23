@@ -12,7 +12,6 @@
  *
  *= require_tree .
  *= require_self
- *= require bootstrap_and_overrides
  */
 .header_image {
   background-image: url("http://i0.hdslb.com/headers/b314d69ec7ba625d89a343366c045026.PNG");
