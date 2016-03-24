@@ -9,7 +9,11 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <%- @carousels.each do |carousel| %>
-      <div class="item active">
+      <%- if carousel === @carousels.first %>
+        <div class='item active'>
+      <%- else %>
+      <div class="item">
+      <%end%>
         <%= image_tag carousel.photo_path %>
         <div class="carousel-caption">
           <%= carousel.caption %>

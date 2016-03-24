@@ -1,9 +1,9 @@
 doctype html
-html
+html.turbolinks-progress-bar
 head
   title Backend
   = stylesheet_link_tag    "backend/application", media: "all"
-  = javascript_include_tag "backend/application"
+  = javascript_include_tag "backend/application", 'data-turbolinks-track' => true
   = csrf_meta_tags
 body
   .main.row.expanded

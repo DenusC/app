@@ -4,23 +4,28 @@ class ResourcesController <  ApplicationController
     _resource_underscored =  sub_klass.to_s.demodulize.underscore.gsub('_controller', '')
     _model_klass = _resource_underscored.singularize.camelize.constantize
 
-    sub_klass.module_exec do
-      define_singleton_method(:model_klass) do
-        _model_klass
-      end
-
+    sub_klass.class_exec do
+      private
+      # define sub_klas's instance methods
       define_method((_resource_underscored + '_params').to_sym) do
         params.require(_model_klass.to_s.underscore.to_sym).permit resource_attrs
       end
 
       define_method(:resource_attrs) do
-        model_klass.attribute_names.map(&:to_sym)
+        model_klass.attribute_names.delete_if{|attr| %w(created_at updated_at id).include? attr}.map(&:to_sym)
       end
 
       alias_method :resource_params, (_resource_underscored + '_params').to_sym
     end
-  end
 
+    # define class singleton methods
+    sub_klass.instance_exec do
+      @model_klass = _model_klass
+      def model_klass
+        @model_klass
+      end
+    end
+  end
 
   def index
     @resources = model_klass.all.order('id desc')
@@ -43,17 +48,9 @@ class ResourcesController <  ApplicationController
     @resource = model_klass.find(params[:id])
   end
 
-private
-def model_klass
-  self.class.model_klass
-end
-  # protected
-  #
-  # define_method(@resource_underscored.concat('_params').to_sym) do
-  #   params.require(@resource.pluralize.to_sym).permit resource_attrs
-  # end
-  # define_method(@resource_underscored.concat('_attrs').to_sym) do
-  #   @model_klass.attributes.map(&:to_sym)
-  # end
+  private
+  def model_klass
+    self.class.model_klass
+  end
 end
 end

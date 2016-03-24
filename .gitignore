@@ -7,3 +7,4 @@ Capfile
 config/database.yml
 */**/.DS_Store
 db/schema.rb
+public/assets

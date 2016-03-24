@@ -10,6 +10,8 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require jquery-ui/datepicker
+ *= require jquery-ui/selectmenu
  *= require_tree .
  *= require_self
  */
@@ -20,4 +22,9 @@
 abbr[title] {
   color: red;
   border-bottom-style: none;
+}
+
+html.turbolinks-progress-bar::before {
+  background-color: red !important;
+  height: 5px !important;
 }
