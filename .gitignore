@@ -1,7 +1,7 @@
 log/
 tmp/
 vendor/cache/
-Gemfile.lock
+vendor/bundle/
 Capfile
 .bundle/
 config/database.yml
