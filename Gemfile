@@ -58,7 +58,7 @@ group :development do
 end
 
 group :staging do
-  gem 'mysql2', '~>0.4'
+ # gem 'mysql2', '~>0.4'
 end
 gem 'sidekiq'
 gem 'comment'
