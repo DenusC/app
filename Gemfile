@@ -57,6 +57,9 @@ group :development do
   gem 'spring'
 end
 
+group :staging do
+  gem 'mysql2', '~>0.4'
+end
 gem 'sidekiq'
 gem 'comment'
 gem 'devise'
