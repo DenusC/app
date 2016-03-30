@@ -9,7 +9,11 @@
 #  author_id      :integer
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
+#  desc           :text
+#  name           :string
 #
 
 class Video < ActiveRecord::Base
+  def poster
+  end
 end

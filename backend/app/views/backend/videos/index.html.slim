@@ -1,0 +1,18 @@
+= link_to "新增视频", backend.new_video_path, class: 'float-right button'
+hr
+table
+  thead
+    th 名称
+    th 缩略图地址
+    th 标题
+    th 链接地址
+    th 描述
+  tbody
+    - @resources.each do |resource|
+      tr
+        td = resource.name
+        td = resource.thumbnail_path
+        td = resource.caption
+        td = resource.url
+        td = resource.desc
+           

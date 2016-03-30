@@ -19,8 +19,8 @@ class ResourcesController <  ApplicationController
     end
 
     # define class singleton methods
+    sub_klass.instance_variable_set(:@model_klass, _model_klass)
     sub_klass.instance_exec do
-      @model_klass = _model_klass
       def model_klass
         @model_klass
       end

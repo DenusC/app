@@ -28,8 +28,10 @@ module App
     # generator
     config.generators do |g|
       g.test_framework :minitest
-      g.helper :false
+      g.helper false
       g.template_engine :slim
+      g.javascripts false
+      g.javacript_engine :coffee
     end
 
     # middleware config
@@ -39,5 +41,7 @@ module App
     # controller
     config.action_controller.perform_caching = false
 
+    #auto load path
+    config.autoload_paths += %W(#{config.root}/lib/validators)
   end
 end
