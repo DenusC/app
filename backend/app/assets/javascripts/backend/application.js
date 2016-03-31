@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require jquery-ui/datepicker
 //= require jquery-ui/selectmenu
+//= require foundation
 //= require_tree .

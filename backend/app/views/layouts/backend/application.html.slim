@@ -2,10 +2,9 @@ doctype html
 html.turbolinks-progress-bar
 head
   title Backend
-  = stylesheet_link_tag    "backend/application", media: "all"
-  = stylesheet_link_tag    "https://cdn.jsdelivr.net/foundation/6.2.0/foundation.min.css", media: "all"
+  = stylesheet_link_tag    "backend/application", media: "all", 'data-turbolinks-track' => true
   = javascript_include_tag "backend/application", 'data-turbolinks-track' => true
-  = javascript_include_tag "https://cdn.jsdelivr.net/foundation/6.2.0/foundation.min.js", 'data-turbolinks-track' => true
+  
   = csrf_meta_tags
 body
   .main.row.expanded

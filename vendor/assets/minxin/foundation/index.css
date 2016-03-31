@@ -1,0 +1,6 @@
+/*
+ * add require foundation in css file to import all css listed following.
+ * look into sprockets for more infos.
+ *
+ *= require ./foundation.min.css
+ */
