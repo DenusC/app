@@ -43,5 +43,8 @@ module App
 
     #auto load path
     config.autoload_paths += %W(#{config.root}/lib/validators)
+
+    # ActiveRecord
+    config.active_record.logger = Logger.new(Rails.root.join('log', Rails.env + '.log'), 'daily')
   end
 end
