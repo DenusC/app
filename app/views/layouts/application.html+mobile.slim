@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title  my_app
+    = stylesheet_link_tag    'mobile', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'mobile', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  body ontouchstart=''
+    header.ui-header.ui-header-positive.ui-border-b
+      i.ui-icon-return onclick='history.back()'
+      h1  基础样式
+      button.ui-btn 返回首页
+    section.ui-container
+      = yield
+    footer.ui-footer.ui-footer-btn
+      | asdfsa
