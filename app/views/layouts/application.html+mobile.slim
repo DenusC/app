@@ -1,6 +1,7 @@
 doctype html
 html
   head
+    meta name="viewport" content="width=device-width, initial-scale=1"
     title  my_app
     = stylesheet_link_tag    'mobile', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'mobile', 'data-turbolinks-track' => true
@@ -11,6 +12,7 @@ html
       h1  基础样式
       button.ui-btn 返回首页
     section.ui-container
+      = render 'layouts/search_box'
       = yield
     footer.ui-footer.ui-footer-btn
-      | asdfsa
+      = render 'layouts/menu'
