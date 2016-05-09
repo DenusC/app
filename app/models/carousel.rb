@@ -11,8 +11,11 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
-
+require 'elasticsearch/model'
 class Carousel < ActiveRecord::Base
+  include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
+
   validates :name, presence: true
   validates :url, url: true
 end

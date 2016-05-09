@@ -74,3 +74,5 @@ gem 'slim', '~> 3.0', '>= 3.0.6'
 gem 'backend', path: "./backend"
 
 gem 'awesome_print', '~> 1.6', '>= 1.6.1'
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
